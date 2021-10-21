@@ -1,0 +1,114 @@
+@mixin clearfix {
+    &::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+}
+@mixin formclear {
+    border: none;
+    outline: none;
+    background: transparent;
+    background-image: none;
+    box-shadow: none;
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 0;
+}
+@mixin bgsetup($bgimage: '', $bgrepeat: '', $bgposi: '', $bgsize: '') {
+    @if $bgimage != '' {
+        background-image: url($bgimage);
+    }
+    @if $bgrepeat != '' {
+        background-repeat: $bgrepeat;
+    }
+    @if $bgposi != '' {
+        background-position: $bgposi;
+    }
+    @if $bgsize != '' {
+        background-size: $bgsize;
+    }
+}
+@mixin xlarge { //xlarge
+    @media (max-width: ($breakpoint-xlarge)) {
+        @content;
+    }
+}
+@mixin large { //large
+    @media (max-width: ($breakpoint-large)) {
+        @content;
+    }
+}
+@mixin semilarge { //semilarge
+    @media (max-width: ($breakpoint-semilarge)) {
+        @content;
+    }
+}
+@mixin pc { //pc
+    @media (max-width: ($breakpoint-pc)) {
+        @content;
+    }
+}
+@mixin tb { //tb
+    @media (max-width: ($breakpoint-tb)) {
+        @content;
+    }
+}
+@mixin sp { //sp
+    @media (max-width: ($breakpoint-md)) {
+        @content;
+    }
+}
+@mixin sp_min { //sp min
+    @media (max-width: ($breakpoint-sm)) {
+        @content;
+    }
+}
+@mixin sp_xmin { //sp xmin
+    @media (max-width: ($breakpoint-xsm)) {
+        @content;
+    }
+}
+/* automatic size vw */
+@function get_vw($fsize, $viewport:375) {
+    $rate: 100 / $viewport;
+    @return $rate * $fsize * 1vw;
+}
+
+@mixin fz_vw($font_size:10) {
+    font-size: $font_size * 1px;
+    font-size: get_vw($font_size);
+}
+
+/* automatic size vh */
+@function get_vh($fsize, $viewport:1080) {
+    $rate: 100 / $viewport;
+    @return $rate * $fsize * 1vh;
+}
+
+@mixin fz_vh($font_size:10) {
+    font-size: $font_size * 1px;
+    font-size: get_vh($font_size);
+}
+
+/* text clamp */
+@mixin txtClamp($clamp: '', $line: '', $fontsize: '') {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $clamp;
+    height: $fontsize * $clamp * $line;
+    @if $line != '' {
+        line-height: $line;
+    }
+}
+
+/* anime In order */
+@mixin animeInorder($limit, $sec, $ease-cubic, $delay) {
+    @for$i from 1 through $limit {
+        &:nth-child(#{$i}) {
+            -webkit-animation: slideIn $sec $ease-cubic #{$delay+$i*0.1} forwards;
+                    animation: slideIn $sec $ease-cubic #{$delay+$i*0.1} forwards;
+        }
+    }
+}
