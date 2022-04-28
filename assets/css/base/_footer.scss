@@ -51,6 +51,7 @@
       cursor: pointer;
       color: $blue;
       font-size: 20px;
+      line-height: 1.2;
       @include sp() {
         @include clamp(4);
         font-size: 16px;

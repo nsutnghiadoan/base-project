@@ -267,6 +267,7 @@ a:focus {
   cursor: pointer;
   color: #0f88ff;
   font-size: 20px;
+  line-height: 1.2;
 }
 @media (max-width: 428px) {
   .footer-wrapper_title {
