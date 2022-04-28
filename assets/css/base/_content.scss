@@ -1,0 +1,56 @@
+.content {
+  background-color: $background-banner;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  @include sp() {
+    background-color: $white;
+  }
+  &-img {
+    margin-top: 60px;
+    @include sp() {
+      margin-top: 30px;
+    }
+  }
+  &-main {
+    margin: 60px;
+    padding: 40px;
+    gap: 30px;
+    list-style: none;
+    width: 1000px;
+    height: 290px;
+    background-color: $white;
+    box-shadow: 0px 3px 10px #00000029;
+    border: 1px solid #dedede;
+    border-radius: 16px;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    @include sp() {
+      margin: 10px;
+      width: 100%;
+      overflow: scroll;
+      border-radius: unset;
+      gap: 12px;
+      padding: 20px;
+      border: none;
+      box-shadow: none;
+      height: 200px;
+    }
+  }
+
+  &-item {
+    cursor: pointer;
+    &:hover {
+      opacity: 0.7;
+    }
+    &:hover &_title {
+      color: $red;
+      font-weight: 550;
+    }
+    &_title {
+      color: $gray;
+      @include clamp(2);
+    }
+  }
+}

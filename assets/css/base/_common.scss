@@ -1,56 +1,88 @@
 /*
     common
 */
-html,
-body {
-    width: 100%;
-    height: 100%;
-    color: $clr-base-font;
-    font-size: 100%;
-    font-family: $base-font-family;
-    -webkit-text-size-adjust: 100%;
-        -ms-text-size-adjust: 100%;
-    word-wrap: break-word;
-    text-align: center;
-    overflow-y: auto;
-    background-color: $clr-base-bg;
-    &.hidden {
-        height: 100%;
-        overflow: hidden;
-    }
-}
+
 * {
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-img {
-    width: auto;
-    height: auto;
-    max-width: 100%;
-    -webkit-touch-callout:none;
+.btn {
+  font-size: 16px;
+  color: $text-btn-footer;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  background-color: $background-border-btn;
+  font-size: 16px;
+  padding: 5px 10px;
+  margin: 5px 2px;
+  cursor: pointer;
+  @include sp() {
+    font-size: 13px;
+    padding: 5px 8px;
+  }
 }
-ul,ol {
-    list-style: none;
-}
-a {
-    outline: none;
-    text-decoration: none;
-    -webkit-transition: .3s $ease-inout;
-            transition: .3s $ease-inout;
-}
-.util_sp {
-    display: none !important;
-    @include sp {
-        display: block !important;
+.footer-btn {
+  position: relative;
+  grid-column: 1/-1;
+  height: 85px;
+  width: 100%;
+  color: $white;
+  font-size: 30px;
+  border: none;
+  box-shadow: 0px 3px 6px #00000034;
+  border-radius: 9px;
+  cursor: pointer;
+  @include sp() {
+    width: 350px;
+    height: 70px;
+  }
+  &:hover {
+    opacity: 0.9;
+  }
+  &_icon {
+    float: left;
+    margin: 25px;
+    color: $white;
+    @include sp() {
+      margin: 15px;
     }
+  }
+  &_title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    @include sp() {
+      font-size: 22px;
+    }
+  }
+  &-orange {
+    background-color: $orange;
+  }
+  &-red {
+    background-color: $red;
+  }
+}
+// ul,
+// ol {
+//   list-style: none;
+// }
+// a {
+//   outline: none;
+//   text-decoration: none;
+// }
+.util_sp {
+  display: none !important;
+  @include sp {
+    display: block !important;
+  }
 }
 .util_pc {
-    display: block !important;
-    @include sp {
-        display: none !important;
-    }
-}
-@media print {
-    img {
-        display: none;
-    }
+  display: block !important;
+  @include sp {
+    display: none !important;
+  }
 }

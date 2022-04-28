@@ -4,10 +4,9 @@
 @import "config/fonts";
 @import "mixin/functions";
 @import "modules/ui";
-@import "modules/anime";
 @import "base/common";
-@import "base/loader";
 @import "base/header";
-@import "base/footer";
-@import "base/nav";
 @import "base/style";
+@import "base/banner";
+@import "base/content";
+@import "base/footer";

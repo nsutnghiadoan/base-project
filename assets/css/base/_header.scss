@@ -1,11 +1,15 @@
 /*
 	header
 */
-header {
-	&#header {
-
-		> .inner {
-
-		}
-	}
+#header {
+  height: 60px;
+  box-shadow: 0px 3px 6px #00000029;
+}
+.header-logo {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  &_img {
+    margin-left: 20px;
+  }
 }

@@ -1,10 +1,89 @@
-/*
-    footer
-*/
-footer {
-    &#footer {
-        > .inner {
-
-        }
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 1300px;
+  &-img {
+    margin: 60px 0px;
+    @include sp() {
+      margin: 50px 0px 25px 0px;
     }
+  }
+  &-body {
+    display: grid;
+    grid-template-columns: 492px 492px;
+    grid-template-rows: 445px 445px;
+    gap: 26px 16px;
+    @include sp() {
+      grid-template-columns: 390px;
+      grid-template-rows: 344px;
+      gap: 15px 20px;
+    }
+  }
+  &-content {
+    position: relative;
+    background-color: $white;
+    box-shadow: 0px 3px 10px #00000029;
+    border: 1px solid #dedede;
+    border-radius: 16px;
+  }
+  &-wrapper {
+    @include sp() {
+      height: 345px;
+      padding: 19px;
+    }
+    padding: 26px;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    &_desc {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 285px;
+      @include sp() {
+        display: flex;
+        height: 216px;
+        justify-content: space-between;
+      }
+    }
+    &_title {
+      cursor: pointer;
+      color: $blue;
+      font-size: 20px;
+      @include sp() {
+        @include clamp(4);
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+      &:hover {
+        color: $red;
+        font-weight: 600;
+      }
+    }
+
+    &_info {
+      color: $dark;
+      font-size: 14px;
+      @include sp() {
+        @include clamp(1);
+        font-size: 16px;
+      }
+    }
+    &_img {
+      margin: 0px 16px 22px 0px;
+
+      &_main {
+        cursor: pointer;
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+      &_sale {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+      }
+    }
+  }
 }

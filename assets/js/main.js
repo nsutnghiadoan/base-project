@@ -1,3 +1,5 @@
+
+
 (function ($) {
     var _duration = 1000,
         _easing = 'easeOutCubic',
